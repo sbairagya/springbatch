@@ -7,12 +7,12 @@ import org.springframework.batch.item.ItemWriter;
 
 import java.util.List;
 
-public class MockWriter implements ItemWriter{
+public class MockWriter implements ItemWriter {
     Logger logger = LogManager.getLogger(MockProcessor.class.getName());
 
 
     @Override
     public void write(List list) throws Exception {
-        logger.debug("Writer output{}",list.toArray());
+        logger.debug("Writer output{}", list.toArray());
     }
 }
