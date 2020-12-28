@@ -1,4 +1,4 @@
-package org.sbEnterprise.ChunkBatchComponents;
+package org.sbEnterprise.chunkBatchComponents;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

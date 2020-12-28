@@ -1,4 +1,4 @@
-package org.sbEnterprise.TaskletBatchComponents;
+package org.sbEnterprise.taskletBatchComponents;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

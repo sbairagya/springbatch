@@ -1,4 +1,4 @@
-package org.sbEnterprise.TaskletBatchComponents;
+package org.sbEnterprise.taskletBatchComponents;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MockReader implements Tasklet, StepExecutionListener {
-    private static final Logger logger = LogManager.getLogger(org.sbEnterprise.ChunkBatchComponents.MockReader.class.getName());
+    private static final Logger logger = LogManager.getLogger(org.sbEnterprise.chunkBatchComponents.MockReader.class.getName());
     private final static String inputString = "small case string";
     private static int recordCounter;
     private List<String> returnStringList;

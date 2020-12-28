@@ -1,4 +1,4 @@
-package org.sbEnterprise.TaskletBatchComponents;
+package org.sbEnterprise.taskletBatchComponents;
 
 import org.sbEnterprise.springbatch.JobWithJobOperatorTemplate;
 import org.springframework.batch.core.Job;

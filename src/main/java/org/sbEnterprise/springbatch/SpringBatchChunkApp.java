@@ -2,7 +2,7 @@ package org.sbEnterprise.springbatch;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.sbEnterprise.ChunkBatchComponents.SpringBatchChunkConfig;
+import org.sbEnterprise.chunkBatchComponents.SpringBatchChunkConfig;
 import org.springframework.batch.core.JobParametersInvalidException;
 import org.springframework.batch.core.launch.JobExecutionNotRunningException;
 import org.springframework.batch.core.launch.JobInstanceAlreadyExistsException;

@@ -1,4 +1,4 @@
-package org.sbEnterprise.ChunkBatchComponents;
+package org.sbEnterprise.chunkBatchComponents;
 
 import org.sbEnterprise.springbatch.JobWithJobOperatorTemplate;
 import org.springframework.batch.core.Job;
