@@ -13,7 +13,7 @@ Clone master Branch from this repo and run the
 SpringBatchChunkApp - to see Chunk processing in action:
 ![Alt text](https://github.com/sbairagya/spring-batch/blob/develop/Chunk-Console.png?raw=true "Chunk Processing Console")
 SpringBatchTaskletApp - to see tasklet processing in action.
-![Alt text](https://github.com/sbairagya/spring-batch/blob/develop/Tasklet-Console.png?raw=true "Chunk Processing Console")
+![Alt text](https://github.com/sbairagya/spring-batch/blob/develop/Tasklet_Console.png?raw=true "Chunk Processing Console")
 
 #
 
