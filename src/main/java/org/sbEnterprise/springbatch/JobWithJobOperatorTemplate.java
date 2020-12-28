@@ -31,14 +31,14 @@ public abstract class JobWithJobOperatorTemplate {
     public JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public final ProcessShutdownListener shutdownListener() throws Exception {
+    public ProcessShutdownListener shutdownListener() throws Exception {
         ProcessShutdownListener processShutdownListener = new ProcessShutdownListener();
         processShutdownListener.setJobOperator(jobOperator());
         return processShutdownListener;
     }
 
     @Bean
-    public final JobOperator jobOperator() throws Exception {
+    public JobOperator jobOperator() throws Exception {
         SimpleJobOperator jobOperator = new SimpleJobOperator();
         jobOperator.setJobLauncher(jobLauncher);
         jobOperator.setJobRepository(jobRepository);
@@ -55,7 +55,7 @@ public abstract class JobWithJobOperatorTemplate {
      * @return
      */
     @Bean
-    public final JobRegistryBeanPostProcessor jobRegistryBeanPostProcessor(JobRegistry jobRegistry) {
+    public JobRegistryBeanPostProcessor jobRegistryBeanPostProcessor(JobRegistry jobRegistry) {
         JobRegistryBeanPostProcessor jobRegistryBeanPostProcessor = new JobRegistryBeanPostProcessor();
         jobRegistryBeanPostProcessor.setJobRegistry(jobRegistry);
         return jobRegistryBeanPostProcessor;

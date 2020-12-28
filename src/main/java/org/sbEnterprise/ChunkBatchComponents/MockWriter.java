@@ -1,4 +1,4 @@
-package org.sbEnterprise.SampleBatchComponents;
+package org.sbEnterprise.ChunkBatchComponents;
 
 
 import org.apache.logging.log4j.LogManager;
@@ -13,6 +13,8 @@ public class MockWriter implements ItemWriter {
 
     @Override
     public void write(List list) throws Exception {
-        logger.debug("Writer output{}", list.toArray());
+        list.forEach(s -> {
+            logger.debug("Writer output:{}", s.toString());
+        });
     }
 }

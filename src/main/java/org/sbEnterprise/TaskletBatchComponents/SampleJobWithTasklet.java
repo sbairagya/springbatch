@@ -1,4 +1,4 @@
-package org.sbEnterprise.TaskletExample;
+package org.sbEnterprise.TaskletBatchComponents;
 
 import org.sbEnterprise.springbatch.JobWithJobOperatorTemplate;
 import org.springframework.batch.core.Job;
@@ -15,6 +15,7 @@ public class SampleJobWithTasklet extends JobWithJobOperatorTemplate {
                 .start(readLine())
                 .next(processLine())
                 .next(writeLine())
+                .listener(shutdownListener())
                 .build();
     }
 
@@ -25,6 +26,7 @@ public class SampleJobWithTasklet extends JobWithJobOperatorTemplate {
                 .tasklet(new MockReader())
                 .build();
     }
+
     @Bean
     public Step processLine() {
         return this.stepBuilderFactory
@@ -32,6 +34,7 @@ public class SampleJobWithTasklet extends JobWithJobOperatorTemplate {
                 .tasklet(new MockProcessor())
                 .build();
     }
+
     @Bean
     public Step writeLine() {
         return this.stepBuilderFactory

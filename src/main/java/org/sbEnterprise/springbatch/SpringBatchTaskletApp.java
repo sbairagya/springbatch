@@ -2,8 +2,7 @@ package org.sbEnterprise.springbatch;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.sbEnterprise.SampleBatchComponents.SampleBatchJobConfiguration;
-import org.sbEnterprise.TaskletExample.SampleJobWithTasklet;
+import org.sbEnterprise.TaskletBatchComponents.SampleJobWithTasklet;
 import org.springframework.batch.core.JobParametersInvalidException;
 import org.springframework.batch.core.launch.JobExecutionNotRunningException;
 import org.springframework.batch.core.launch.JobInstanceAlreadyExistsException;
@@ -21,15 +20,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 @SpringBootApplication
 @EnableAutoConfiguration
-public class SpringBatchTasklet {
-	private static final Logger logger = LogManager.getLogger(SpringBatchTasklet.class.getName());
+public class SpringBatchTaskletApp {
+    private static final Logger logger = LogManager.getLogger(SpringBatchTaskletApp.class.getName());
 
-	public static void main(String[] args) throws InterruptedException, JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobInstanceAlreadyExistsException, NoSuchJobException, NoSuchJobExecutionException, JobExecutionNotRunningException {
-		SpringApplication.run(SpringBatchTasklet.class, args);
-		ApplicationContext context = new AnnotationConfigApplicationContext(SampleJobWithTasklet.class);
-		//JobExecution jobExecution = context.getBean("jobLauncher",JobLauncher.class).run(context.getBean("job", Job.class), new JobParametersBuilder().toJobParameters());
-		SimpleJobOperator jobOperator =context.getBean("jobOperator", SimpleJobOperator.class);
-		Long executionID = jobOperator.start("mockTaskletJob","");
-	}
+    public static void main(String[] args) throws InterruptedException, JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobInstanceAlreadyExistsException, NoSuchJobException, NoSuchJobExecutionException, JobExecutionNotRunningException {
+        SpringApplication.run(SpringBatchTaskletApp.class, args);
+        ApplicationContext context = new AnnotationConfigApplicationContext(SampleJobWithTasklet.class);
+        SimpleJobOperator jobOperator = context.getBean("jobOperator", SimpleJobOperator.class);
+        Long executionID = jobOperator.start("mockTaskletJob", "");
+    }
 
 }
