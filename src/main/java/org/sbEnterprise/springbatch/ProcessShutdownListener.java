@@ -14,7 +14,9 @@ public class ProcessShutdownListener implements JobExecutionListener {
     private JobOperator jobOperator;
 
     @Override
-    public void afterJob(JobExecution jobExecution) { /* do nothing. */ }
+    public void afterJob(JobExecution jobExecution) {
+        logger.debug("End of Job.. after job executed..");
+    }
 
     @Override
     public void beforeJob(final JobExecution jobExecution) {
