@@ -1,4 +1,4 @@
-package org.sbEnterprise.SampleBatchComponents;
+package org.sbEnterprise.chunkBatchComponents;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,8 +11,7 @@ public class MockProcessor implements ItemProcessor<String, String> {
 
     @Override
     public String process(String s) throws Exception {
-        logger.debug("output from process{}",s);
-       // System.out.println("Sanku");
+        logger.debug("output from process:{}", s.toUpperCase(Locale.ROOT));
         Thread.sleep(50);
         return s.toUpperCase(Locale.ROOT);
     }

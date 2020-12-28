@@ -1,4 +1,4 @@
-package org.sbEnterprise.SampleBatchComponents;
+package org.sbEnterprise.chunkBatchComponents;
 
 
 import org.apache.logging.log4j.LogManager;
@@ -7,12 +7,14 @@ import org.springframework.batch.item.ItemWriter;
 
 import java.util.List;
 
-public class MockWriter implements ItemWriter{
+public class MockWriter implements ItemWriter {
     Logger logger = LogManager.getLogger(MockProcessor.class.getName());
 
 
     @Override
     public void write(List list) throws Exception {
-        logger.debug("Writer output{}",list.toArray());
+        list.forEach(s -> {
+            logger.debug("Writer output:{}", s.toString());
+        });
     }
 }

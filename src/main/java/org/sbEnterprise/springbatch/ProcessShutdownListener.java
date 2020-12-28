@@ -26,9 +26,12 @@ public class ProcessShutdownListener implements JobExecutionListener {
                 super.run();
                 try {
                     jobOperator.stop(jobExecution.getId());
-                    while(jobExecution.isRunning()) {
+                    while (jobExecution.isRunning()) {
                         logger.info("waiting for job to stop...");
-                        try {Thread.sleep(100);} catch (InterruptedException e) {}
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                        }
                     }
                 } catch (NoSuchJobExecutionException e) { // ignore
                 } catch (JobExecutionNotRunningException e) { // ignore
