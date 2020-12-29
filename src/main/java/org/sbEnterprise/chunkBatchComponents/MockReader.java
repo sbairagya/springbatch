@@ -16,6 +16,7 @@ public class MockReader implements ItemReader<String> {
         if (recordCounter < 10) {
             String s = inputString + "_" + recordCounter;
             logger.debug("Returning record #{} from read{}", recordCounter, s);
+            Thread.sleep(200);
             recordCounter++;
             return s;
         } else {
